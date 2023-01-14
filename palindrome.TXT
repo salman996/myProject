@@ -1,0 +1,24 @@
+function palindrome(str) {
+//getting only lower case alphanumeric chars
+  let mystr= '';
+  for(let i=0;i<str.length;i++){
+    if(str[i].match(/[a-z]|[0-9]/i))
+        mystr+=str[i];
+  }
+  mystr= mystr.toLowerCase();
+ 
+ // if input in Even
+  if(mystr.length%2===0){
+    for(let i=0;i<mystr.length/2;i++){
+        if(mystr[i]!==mystr[mystr.length-i-1])
+            return false;
+    }
+    return true;
+  }else{ // if input in Odd
+        for(let i=0;i<(mystr.length-1)/2;i++){
+            if(mystr[i]!==mystr[mystr.length-i-1])
+                return false;
+        }
+        return true;
+    }
+}
